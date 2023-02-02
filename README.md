@@ -50,7 +50,7 @@ Most assets in `assets` folder is from [Minecraft Wiki](https://minecraft-zh.gam
 - The weather data is from [Caiyun Weather](https://h5.caiyunapp.com/h5) which requires a free registration for an API key.
 
 ### Thanks
-- [@jinzhijie](/jinzhijie)
-- [@amtoaer](/amtoaer)
+- [@jinzhijie](https://github.com/jinzhijie)
+- [@amtoaer](https://github.com/amtoaer)
 - [Minecraft](https://minecraft.net/)
 - [mcstatus](https://pypi.org/project/mcstatus/)
