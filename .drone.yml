@@ -1,0 +1,18 @@
+kind: pipeline
+name: Build and Push Docker Image
+steps:
+  - name: docker
+    image: plugins/docker
+    settings:
+      registry: hub.qmcmc.cn
+      repo: qcminecraft/QCMCSign
+      use_cache: true
+      username:
+        from_secret: docker_username
+      password:
+        from_secret: docker_password
+    tags:
+      - latest
+    when:
+      event: push
+      branch: master
