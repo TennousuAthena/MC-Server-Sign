@@ -1,8 +1,5 @@
 # QCMCSign
 
-![license](https://badgen.net/github/license/tennousuathena/QCMCSign)
-![commits](https://badgen.net/github/commits/tennousuathena/QCMCSign)
-
 
 Get your own Minecraft server status signature
 
