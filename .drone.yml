@@ -23,8 +23,6 @@ steps:
         from_secret: docker_password
       dockerfile: Dockerfile
       tags: latest
-    tags:
-      - latest
     when:
       event: push
       branch: master
