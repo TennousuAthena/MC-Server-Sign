@@ -15,6 +15,7 @@ steps:
       - name: dockersock
         path: "/var/run/docker.sock"
     settings:
+      registry: hub.qmcmc.cn
       repo: hub.qmcmc.cn/qcmc/mc-sign
       use_cache: true
       username:
