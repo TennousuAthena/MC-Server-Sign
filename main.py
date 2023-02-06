@@ -2,8 +2,10 @@ from fastapi import FastAPI
 from fastapi.responses import HTMLResponse, StreamingResponse, Response
 from libs.mcserver import Mcserver
 from starlette.responses import FileResponse
+from dotenv import load_dotenv
 
 app = FastAPI()
+load_dotenv()
 
 
 @app.get("/")

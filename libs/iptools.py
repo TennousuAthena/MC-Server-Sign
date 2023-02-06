@@ -1,5 +1,6 @@
 import linecache
 import os
+from libs import caiyun
 
 
 class Ip2loc:
@@ -40,3 +41,13 @@ class Ip2loc:
 
     int2ip = lambda x: '.'.join([str(x / (256 ** i) % 256) for i in range(3, -1, -1)])
     ip2int = lambda x: sum([256 ** j * int(i) for j, i in enumerate(x.split('.')[::-1])])
+
+
+def get_weather() -> dict:
+    token = os.getenv("CAIYUN_TOKEN")
+    if not token:
+        raise Exception("No token found")
+    w = caiyun.Weather(token)
+    loc = Ip2loc()
+    lat, lon = loc.get_loc(16777472)[6:8]
+    return w.get_weather(lat, lon)
