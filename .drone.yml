@@ -1,3 +1,4 @@
+---
 kind: pipeline
 type: docker
 name: Build and Push Docker Image
@@ -8,11 +9,11 @@ volumes:
     path: /var/run/docker.sock
 
 steps:
-  - name: docker
+  - name: docker-build-push
     image: plugins/docker
     volumes:
-      - name: docker
-        path: /var/run/docker.sock
+      - name: dockersock
+        path: "/var/run/docker.sock"
     settings:
       registry: hub.qmcmc.cn
       repo: qcmc/mc-sign
@@ -21,8 +22,10 @@ steps:
         from_secret: docker_username
       password:
         from_secret: docker_password
-      dockerfile: Dockerfile
+      dockerfile: ./Dockerfile
       tags: latest
     when:
       event: push
-      branch: master
+      branch:
+        - master
+        - CI
